@@ -6,18 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import pages.AccountListPage;
-import pages.ContactListPage;
-import pages.NewAccountModalPage;
-import pages.NewContactModalPage;
+import pages.*;
 import utils.TestListener;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
 abstract class BaseTest {
     WebDriver driver;
+    LoginPage loginPage;
+    HomePage homePage;
     AccountListPage accountListPage;
     ContactListPage contactListPage;
     NewAccountModalPage newAccountModalPage;
@@ -47,6 +45,8 @@ abstract class BaseTest {
      * Initializing pages
      */
     public void initPages() {
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
         accountListPage = new AccountListPage(driver);
         contactListPage = new ContactListPage(driver);
         newAccountModalPage = new NewAccountModalPage(driver);
