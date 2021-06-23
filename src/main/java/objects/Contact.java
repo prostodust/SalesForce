@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class Account {
+public class Contact {
+    private String firstName;
+    private String lastName;
     private String accountName;
-    private String type;
-    private String website;
     private String phone;
-    private String industry;
-    private String employees;
+    private String email;
+    private String department;
 }
