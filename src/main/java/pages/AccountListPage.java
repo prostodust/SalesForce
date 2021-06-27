@@ -17,11 +17,11 @@ public class AccountListPage extends BasePage{
         driver.get(url);
     }
 
-    public String getAccountName(String accountName) {
+    public String getName(String accountName) {
         return driver.findElement(By.xpath(String.format(NAME_FIELD, accountName))).getText();
     }
 
-    public String getPhone(String phone) {
+    public String getPhoneNumber(String phone) {
         return driver.findElement(By.xpath(String.format(PHONE_FIELD, phone))).getText();
     }
 

@@ -45,7 +45,7 @@ abstract class BaseTest {
      */
     @AfterMethod(alwaysRun = true)
     public void endTest() {
-//        driver.quit();
+        driver.quit();
     }
 
     /**
